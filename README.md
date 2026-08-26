@@ -6,4 +6,4 @@
 
 ---
 
-> **Faltam do dia 19/08/2026 até o dia da apresentação: 56 dias mais o dia do evento.**
+> **Faltam do dia 26/08/2026 até o dia da apresentação: 52 dias mais o dia do evento.**
