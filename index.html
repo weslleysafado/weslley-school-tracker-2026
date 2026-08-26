@@ -1,1 +1,47 @@
+<!-- index.html - Esqueleto para Aula -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>School Tracker 2026 - Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Desafio CSS: Como fazemos para o menu de botões iniciar oculto? */
+        .btn-group {
+            display: /* TODO: Qual propriedade esconde o elemento? */;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- TODO: Adicionar estrutura do formulário de login (Inputs de E-mail e Senha) -->
+        <form id="loginForm">
+            <!-- Os alunos preenchem aqui -->
+        </form>
 
+        <div id="menuBotoes" class="btn-group">
+            <!-- TODO: Adicionar links diretos para scanner.html e telao.html -->
+        </div>
+    </div>
+
+    <script type="module">
+        // TODO: Importar funções de Auth do Firebase CDN (v10)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js&quot;;
+        // import { ... } from "https://www.gstatic.com/.../firebase-auth.js&quot;;
+
+        const firebaseConfig = { /* TODO: Preencher com credenciais do projeto */ };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const form = document.getElementById('loginForm');
+
+        form.addEventListener('submit', function(event) {
+            // TODO: Evitar o recarregamento padrão da página ao enviar o formulário
+           
+            // TODO: Executar o método de login por e-mail e senha no Firebase
+            // signInWithEmailAndPassword(...)
+        });
+    </script>
+</body>
+</html>
