@@ -1,1 +1,126 @@
+/* style.css - Esqueleto para Aula */
 
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-green: #22c55e;
+    --accent-red: #ef4444;
+    --accent-yellow: #eab308;
+    /* Qual variável de cor falta para os botões e estados ativos? */
+}
+
+* {
+    /* Como garantir que padding e border não alterem a largura total? */
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- PAINEL PRINCIPAL (LAYOUT GENERALIZADO) --- */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Barra Superior de Estatísticas */
+.stats-bar {
+    display: flex;
+    /* Como alinhar e distribuir os cards de estatística horizontalmente? */
+    align-items: center;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.stat-item { text-align: center; }
+.stat-item .value { font-size: 2rem; font-weight: 800; }
+.stat-item.alert .value { color: var(--accent-red); }
+
+/* Área Principal (Divisão Lateral) */
+.main-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    min-height: 0;
+}
+
+/* Seção dos Cards de Alunos */
+.monitor-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    /* Qual regra ativa a barra de rolagem apenas quando o conteúdo estoura? */
+}
+
+/* Grid Adaptável de Cards */
+.student-grid {
+    display: grid;
+    /* Como criar uma grade fluida de no mínimo 300px sem quebrar a tela? */
+    gap: 15px;
+}
+
+/* Card Individual do Aluno */
+.student-card {
+    background: var(--card-bg);
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 8px solid var(--accent-blue);
+    position: relative;
+}
+
+.student-card h3 {
+    margin: 0;
+    /* Como tratar nomes extensos para exibir '...' em vez de quebrar a linha? */
+}
+
+/* Animação para Alunos em Tempo Crítico (>10 min) */
+.student-card.critical {
+    border-left-color: var(--accent-red);
+    /* Como associar a animação pulse-red em loop continuo? */
+}
+
+/* Lateral de Gráficos */
+.analytics-side {
+    flex: 1;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Animações Keyframes */
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* --- REGRAS DE RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    body {
+        /* Como ajustar o overflow no celular para permitir rolagem geral? */
+    }
+
+    .stats-bar, .main-content {
+        /* Qual valor do flex-direction força a mudança do layout de linha para coluna? */
+    }
+
+    .monitor-section, .analytics-side {
+        width: 100% !important;
+        flex: none;
+    }
+}
